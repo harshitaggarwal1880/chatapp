@@ -1,6 +1,6 @@
 # MERN Stack Chat App
 
-[https://liffy.netlify.app/]
+## Live Now: https://liffy.netlify.app/
 
 This is a simple chat application built using the MERN stack (MongoDB, Express, React, and Node.js). It allows users to join chat rooms, send and receive messages in real-time, and view chat history. This README file provides information on how to set up and run the MERN Stack Chat App.
 
