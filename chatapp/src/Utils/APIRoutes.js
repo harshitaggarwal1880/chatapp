@@ -2,7 +2,8 @@
 // export const host = "http://localhost:5000";
 
 // for deployment
-export const host = "https://chatapp-72oa.onrender.com";
+// export const host = "https://chatapp-72oa.onrender.com";
+export const host = "https://chatapi-production-4047.up.railway.app";
 
 export const registerRoute = `${host}/api/register`;
 
