@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
-import { allUsersRoute, host } from "../Utils/APIRoutes";
+import { allUsersRoute, allallUsersRoute, host } from "../Utils/APIRoutes";
 import Contacts from "../Components/Contacts";
 import Welcome from "../Components/Welcome";
 import ChatContainer from "../Components/ChatContainer";
@@ -10,6 +10,7 @@ import { io } from "socket.io-client";
 
 const Chat = () => {
   const [contacts, setcontacts] = useState([]);
+  const [allcontacts, setallcontacts] = useState([]);
 
   const [currentUser, setcurrentUser] = useState(undefined);
 
@@ -43,8 +44,11 @@ const Chat = () => {
       if (currentUser) {
         if (currentUser.isAvatarImageSet) {
           const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
-
           setcontacts(data.data);
+
+          const alldata = await axios.get(`${allallUsersRoute}/${currentUser._id}`);
+          setallcontacts(alldata.data);
+
         } else {
           navigate("/setavatar");
         }
@@ -81,6 +85,7 @@ const Chat = () => {
             currentuser={currentUser}
             changechat={handlechatChange}
             setIsopen={setIsopen}
+            allcontacts={allcontacts}
           />
         </div>
         {currentChat === undefined ? (

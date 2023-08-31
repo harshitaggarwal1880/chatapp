@@ -65,7 +65,7 @@ const ChatInputContainer = styled.div`
     background-color: #080420;
     padding: 0 2rem;
     // padding-bottom: 0.3rem;
-    height: 12%;
+    // height: 12%;
     gap: 1rem;
     .emoji-container{
         display: flex;

@@ -1,4 +1,6 @@
 const User = require("../models/userModel");
+const Message = require("../models/messageModel")
+
 const brcypt = require("bcrypt")
 
 
@@ -93,3 +95,31 @@ module.exports.allusers = async (req, res, next) =>{
         next(error)
     }
 }
+
+
+// module.exports.allusers = async (req, res, next) =>{
+//     try {
+//         const allusers = await Message.find({ users: { $in: [req.params.id] } }).select([
+//             "users"
+//         ])
+//         const unique_users = new Set();
+        
+//         allusers.forEach((user)=>{
+//             if(user.users[0]!=req.params.id){
+//                 unique_users.add(user.users[0]);
+//             }
+//             else{
+//                 unique_users.add(user.users[1]);
+//             }
+//         })
+        
+//         const users = [... unique_users]
+        
+//         const result = await User.find({ _id: { $in: users } })
+
+//         return res.json(result)
+
+//     } catch (error) {
+//         next(error)
+//     }
+// }

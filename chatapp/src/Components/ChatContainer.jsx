@@ -124,6 +124,9 @@ const ChatContainer = ({ currentchat, currentuser, socket }) => {
 const Chatcontainer = styled.div`
   height: 100vh;
   overflow: hidden;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+
   // padding-top: 1rem;
   .chat-header {
     background-color: #02163b;
@@ -153,14 +156,14 @@ const Chatcontainer = styled.div`
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
-    height: 75%;
+    // height: 75%;
     gap: 1rem;
     overflow: auto;
     .message {
       display: flex;
       align-items: center;
       .content {
-        max-width: 9s0%;
+        max-width: 90%;
         overflow-wrap: break-word;
         color: white;
         padding: 1rem;
